@@ -1,0 +1,1 @@
+This folder is the root of the vagrant box.  Place your angular project here.
