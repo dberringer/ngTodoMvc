@@ -4,28 +4,12 @@
 	<!-- Todo List -->
 	<table class="table">
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td><input type="checkbox"></td>
-				<td>Paint Fence</td>
+			<tr ng-repeat="todo in todos">
+				<th scope="row">{{$index}}</th>
+				<td><input type="checkbox" ng-model="todo.done"></td>
+				<td>{{todo.text}}</td>
 				<td>
-					<button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"></span></button>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td><input type="checkbox"></td>
-				<td>Wash car</td>
-				<td>
-					<button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"></span></button>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td><input type="checkbox" checked="checked"></td>
-				<td>Sand floor</td>
-				<td>
-					<button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-remove"></span></button>
+					<button class="btn btn-danger" type="button" ng-click="deleteTodo($index)"><span class="glyphicon glyphicon-remove"></span></button>
 				</td>
 			</tr>
 		</tbody>
@@ -34,11 +18,12 @@
 
 	<!-- New todo input -->
 	<div class="input-group">
-		<input type="text" class="form-control" placeholder="What needs to be done?" />
+		<input type="text" class="form-control" placeholder="What needs to be done?" ng-model="newTodo" />
 		<span class="input-group-btn">
-			<button class="btn btn-success" type="button">Go! <span class="glyphicon glyphicon-ok"></span></button>
+			<button class="btn btn-success" type="button" ng-click="addTodo()">Go! <span class="glyphicon glyphicon-ok"></span></button>
 		</span>
 	</div>
 	<!-- New todo input -->
 
 </div>
+
