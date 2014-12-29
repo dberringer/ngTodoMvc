@@ -1,25 +1,35 @@
-vagrant-yoeman-devenv
+ngTodoMvc
 ======================
 
-Sets up a vagrant virtual box with yeoman and the angular generator.
+This repo is to help new users understand how to make a basic todo applicaiton with angular.  The repo branches are broken up into steps which are detailed below.
 
 
-Prerequisites
-------------
-
-* Install VirtualBox
-* Install Vagrant
-
-
-Usage
+Step 1
 -----
 
-* Clone this repo into root project folder
-* Run `vagrant up`
-* Run `vagrant ssh`
-* Navigate to the angular folder(this folder will sync to the host machine) and run yeoman `cd /home/vagrant/angular; yo angular`
-* Run `./grunt-fix.sh` to make the grunt server accessible from the host machine
-* Start the webserver with `grunt serve`
-* Open a browser on your host machine to `0.0.0.0:9000`
+* Set up an empty angular application using angular, grunt, bower, yeoman, bootstrap & scss
+
+Step 2
+-----
+
+* Create simple view
+* Add static list
+* Add todo delete button
+* Add todo input field and submit button
+
+Step 3
+-----
+
+* Make todo list dynamicly generate view from static list of todos
+* Link up the todo delte button
+* Link up the new todo input and submit button
+
+Step 4
+-----
+
+* Set up backend todo storage
+* Add calls to delete todos from backend
+* Add calls to add todos from backend
+
 
 Easy peasy lemon squeezy.
