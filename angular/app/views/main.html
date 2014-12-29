@@ -6,10 +6,10 @@
 		<tbody>
 			<tr ng-repeat="todo in todos">
 				<th scope="row">{{$index}}</th>
-				<td><input type="checkbox" ng-model="todo.done"></td>
+				<td><input type="checkbox" ng-model="todo.done" ng-change="todos.$save(todo)"></td>
 				<td>{{todo.text}}</td>
 				<td>
-					<button class="btn btn-danger" type="button" ng-click="deleteTodo($index)"><span class="glyphicon glyphicon-remove"></span></button>
+					<button class="btn btn-danger" type="button" ng-click="todos.$remove(todo)"><span class="glyphicon glyphicon-remove"></span></button>
 				</td>
 			</tr>
 		</tbody>
@@ -17,12 +17,14 @@
 	<!-- Todo List -->
 
 	<!-- New todo input -->
-	<div class="input-group">
-		<input type="text" class="form-control" placeholder="What needs to be done?" ng-model="newTodo" />
-		<span class="input-group-btn">
-			<button class="btn btn-success" type="button" ng-click="addTodo()">Go! <span class="glyphicon glyphicon-ok"></span></button>
-		</span>
-	</div>
+	<form ng-submit="addTodo()">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="What needs to be done?" ng-model="newTodo" />
+			<span class="input-group-btn">
+				<button class="btn btn-success" type="button" ng-click="addTodo()">Go! <span class="glyphicon glyphicon-ok"></span></button>
+			</span>
+		</div>
+	</form>
 	<!-- New todo input -->
 
 </div>
